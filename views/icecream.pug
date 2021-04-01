@@ -23,10 +23,18 @@ block content
                         "cost": "120"
                     },                   
                 ]
-            each ice in icecream  
-                div(class="col-sm-2" ) #{ice.flavour}
+            each ice,goal in icecream  
+                div(class="col-sm-2" onclick=`buy(${goal})`) #{ice.flavour}
                 div(class="col-sm-2" ) #{ice.color}
-                div(class="col-sm-2" ) #{ice.cost}
-                    
-           
+                 div(class="col-sm-2" ) #{ice.cost}
+
+
+  script.
+     
+       function buy(a)
+       {
+         alert(`You purchased Item ${a+1}`)
+       }
+
+   
             
